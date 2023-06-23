@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: sb-repro
+
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://sb-repro-db:5432/sb-repro
+    username: postgres
+    password: password
+
+logging.level.com.romankudryashov: debug
+
+inbox.processing.cron: "*/5 * * * * *"

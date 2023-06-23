@@ -1,0 +1,30 @@
+version: "3.9"
+services:
+
+  sb-repro:
+    image: sb-repro
+    container_name: sb-repro
+    restart: always
+    depends_on:
+      - sb-repro-db
+    healthcheck:
+      test: [ "CMD", "health-check" ]
+      interval: 1m
+      timeout: 3s
+      start_period: 10s
+      retries: 3
+
+  sb-repro-db:
+    image: debezium/postgres:15
+    container_name: sb-repro-db
+    restart: always
+    environment:
+      POSTGRES_DB: sb-repro
+      POSTGRES_PASSWORD: password
+    healthcheck:
+      test: "pg_isready -U postgres -d sb-repro"
+      interval: 10s
+      timeout: 3s
+      retries: 3
+    ports:
+      - "5492:5432"
