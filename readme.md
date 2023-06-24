@@ -1,1 +1,2 @@
-Before `docker compose up`, build the service using `./gradlew :sb-repro-1:bootBuildImage`
+1. `./gradlew :sb-repro-1:bootBuildImage`
+2. `docker compose up`
