@@ -2,12 +2,14 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.springframework.boot.gradle.tasks.bundling.BootBuildImage
 
 plugins {
+    id("java")
     id("org.springframework.boot")
     id("io.spring.dependency-management")
+    id("org.graalvm.buildtools.native")
+    id("org.hibernate.orm")
     kotlin("jvm")
     kotlin("plugin.spring")
     kotlin("plugin.jpa")
-    id("org.graalvm.buildtools.native")
 }
 
 repositories {
@@ -48,4 +50,12 @@ tasks.withType<BootBuildImage> {
             "BP_NATIVE_IMAGE" to "true"
         )
     )
+}
+
+hibernate {
+    enhancement {
+        enableLazyInitialization
+        enableDirtyTracking
+        enableAssociationManagement
+    }
 }
