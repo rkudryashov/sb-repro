@@ -1,9 +1,5 @@
 rootProject.name = "sb-repro"
 
-include(
-    "sb-repro-1"
-)
-
 pluginManagement {
     val springBootVersion: String by settings
     val springDependencyManagementVersion: String by settings

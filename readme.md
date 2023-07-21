@@ -1,2 +1,4 @@
-1. `./gradlew :sb-repro-1:bootBuildImage`
+To start the project:
+
+1. `/gradlew bootBuildImage`
 2. `docker compose up`
