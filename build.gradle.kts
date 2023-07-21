@@ -5,11 +5,11 @@ plugins {
     id("java")
     id("org.springframework.boot")
     id("io.spring.dependency-management")
-    id("org.graalvm.buildtools.native")
     id("org.hibernate.orm")
     kotlin("jvm")
     kotlin("plugin.spring")
     kotlin("plugin.jpa")
+    id("org.graalvm.buildtools.native")
 }
 
 repositories {
