@@ -11,6 +11,12 @@ pluginManagement {
     val hibernateVersion: String by settings
     val kotlinVersion: String by settings
 
+    repositories {
+        gradlePluginPortal()
+        mavenCentral()
+        maven("https://repo.spring.io/milestone/")
+    }
+
     plugins {
         id("org.springframework.boot") version springBootVersion
         id("io.spring.dependency-management") version springDependencyManagementVersion
