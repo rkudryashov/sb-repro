@@ -5,7 +5,6 @@ plugins {
     id("java")
     id("org.springframework.boot")
     id("io.spring.dependency-management")
-    id("org.hibernate.orm")
     id("org.graalvm.buildtools.native")
     kotlin("jvm")
     kotlin("plugin.spring")
@@ -51,12 +50,4 @@ tasks.withType<BootBuildImage> {
             "BP_NATIVE_IMAGE" to "true"
         )
     )
-}
-
-hibernate {
-    enhancement {
-        enableLazyInitialization
-        enableDirtyTracking
-        enableAssociationManagement
-    }
 }

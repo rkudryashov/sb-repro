@@ -17,7 +17,6 @@ pluginManagement {
         id("org.springframework.boot") version springBootVersion
         id("io.spring.dependency-management") version springDependencyManagementVersion
         id("org.graalvm.buildtools.native") version nativeBuildToolsVersion
-        id("org.hibernate.orm") version hibernateVersion
         kotlin("jvm") version kotlinVersion
         kotlin("plugin.spring") version kotlinVersion
         kotlin("plugin.jpa") version kotlinVersion
